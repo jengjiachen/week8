@@ -1,0 +1,42 @@
+html{
+font-family: sans-serif;
+font-size: 1em;
+color: black;
+}
+
+h1{
+color:  pink;
+padding-left:20px;
+font-size: 90px;
+}
+
+table{
+border-collapse: collapse;
+align-self: center;
+padding: 90px;
+}
+
+table, th, td{
+border:2px dotted white;
+}
+
+th{
+text-align: left;
+padding: 20px;
+background-color: pink;
+}
+
+td{
+padding: 20px;
+}
+
+[v-cloak]{
+    display: none;
+}
+.even{
+background-color: lightblue;
+}
+
+.odd{
+background-color: aliceblue;
+}

@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Cat Breeds</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <h1>Cat Breeds</h1>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Origin</th>
+          <th>Characteristics</th>
+          <th>Hair</th>
+          <th>Comments</th>
+        </thead>
+        <tbody>
+          <tr v-for="(catItem, index) in cats" v-bind:class="{even: (index +1) % 2 === 0, odd: (index + 1) % 2 !==0}">
+            <td>{{catItem.name}}</td>
+            <td>{{catItem.orign}}</td>
+            <td>{{catItem.characteristics}}</td>
+            <td>{{catItem.hair}}</td>
+            <td>{{catItem.comments}}</td>
+            <td><button type="button" v-on:click="deleteItem(catItem)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+
+
+    <form class="new-cat-form" v-on:submit.prevent="submitHandler">
+          <fieldset>
+            <legend>
+              Add a Cat to the Collection!
+            </legend>
+            <div>
+              <label for="name">Name
+                <input id="name"type="text" v-model="newCatObj.name">
+              </label>
+            </div>
+
+            <div>
+              <label for="orign">Origin</label>
+                <input id="orign"type="text" v-model="newCatObj.orign">
+              </label>
+            </div>
+
+            <div>
+              <label for="characteristics">Characteristics</label>
+                <input id="characteristics"type="text" v-model="newCatObj.characteristics">
+              </label>
+            </div>
+
+            <div>
+              <label for="hair">Hair</label>
+                <input id="hair"type="text" v-model="newCatObj.hair">
+              </label>
+            </div>
+
+            <div>
+              <label for="comments">Comments</label>
+                <input id="comments"type="text" v-model="newCateObj.comments">
+              </label>
+            </div>
+           
+            <button type="submit">Submit</button>
+          </fieldset>
+        </form>
+      </div>
+
+    <script src="vue.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+
+</html>
